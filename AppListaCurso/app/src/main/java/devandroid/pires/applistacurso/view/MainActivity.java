@@ -10,6 +10,7 @@ import devandroid.pires.applistacurso.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
+    String dadosPessoa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +21,14 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setSobreNome("PIRES");
         pessoa.setCursoDesejado("Android");
         pessoa.setTelefoneContato("11-99999999");
+
+        dadosPessoa = "Primeiro nome: ";
+        dadosPessoa += pessoa.getPrimeiroNome();
+        dadosPessoa += " Sobrenome: ";
+        dadosPessoa += pessoa.getSobreNome();
+        dadosPessoa += " Curso desejado: ";
+        dadosPessoa += pessoa.getCursoDesejado();
+        dadosPessoa += " Telefone de contato: ";
+        dadosPessoa += pessoa.getTelefoneContato();
     }
 }
