@@ -3,6 +3,7 @@ package devandroid.pires.applistacurso.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import devandroid.pires.applistacurso.R;
 import devandroid.pires.applistacurso.model.Pessoa;
@@ -30,5 +31,7 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += pessoa.getCursoDesejado();
         dadosPessoa += " Telefone de contato: ";
         dadosPessoa += pessoa.getTelefoneContato();
+
+        Log.i("POOAndroid",pessoa.toString());
     }
 }
