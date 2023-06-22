@@ -42,34 +42,33 @@ public class MainActivity extends AppCompatActivity {
         controller.toString();
 
         pessoa = new Pessoa();
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome",""));
+        pessoa.setSobreNome(preferences.getString("sobrenome",""));
+        pessoa.setCursoDesejado(preferences.getString("cursoDesejado",""));
+        pessoa.setTelefoneContato(preferences.getString("telefoneContato",""));
 
-        pessoa.setPrimeiroNome("ROBSON");
-        pessoa.setSobreNome("PIRES");
-        pessoa.setCursoDesejado("Android");
-        pessoa.setTelefoneContato("11-99999999");
-
-        dadosPessoa = "Primeiro nome: ";
+     /*   dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
         dadosPessoa += " Sobrenome: ";
         dadosPessoa += pessoa.getSobreNome();
         dadosPessoa += " Curso desejado: ";
         dadosPessoa += pessoa.getCursoDesejado();
         dadosPessoa += " Telefone de contato: ";
-        dadosPessoa += pessoa.getTelefoneContato();
+        dadosPessoa += pessoa.getTelefoneContato();*/
 
         editTextNome = findViewById(R.id.editTextNome);
         editTextSobrenome = findViewById(R.id.editTextSobrenome);
         editTextCurso = findViewById(R.id.editTextCurso);
         editTextTelefone = findViewById(R.id.editTextTelefone);
 
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnFinalizar = findViewById(R.id.btnFinalizar);
-
         editTextNome.setText(pessoa.getPrimeiroNome());
         editTextSobrenome.setText(pessoa.getSobreNome());
         editTextCurso.setText(pessoa.getCursoDesejado());
         editTextTelefone.setText(pessoa.getTelefoneContato());
+
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pessoa.setPrimeiroNome(editTextNome.getText().toString());
-                pessoa.setSobreNome(editTextNome.getText().toString());
-                pessoa.setCursoDesejado(editTextNome.getText().toString());
+                pessoa.setSobreNome(editTextSobrenome.getText().toString());
+                pessoa.setCursoDesejado(editTextCurso.getText().toString());
                 pessoa.setTelefoneContato(editTextTelefone.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo "+pessoa.toString(), Toast.LENGTH_LONG).show();
