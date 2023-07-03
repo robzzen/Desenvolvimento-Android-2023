@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
         preferences = getSharedPreferences(NOME_PREFERENCES, 0);
         listaVip = preferences.edit();
 
-        controller = new PessoaController();
+        controller = new PessoaController(MainActivity.this);
         controller.toString();
 
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome(preferences.getString("primeiroNome",""));
-        pessoa.setSobreNome(preferences.getString("sobrenome",""));
-        pessoa.setCursoDesejado(preferences.getString("cursoDesejado",""));
-        pessoa.setTelefoneContato(preferences.getString("telefoneContato",""));
+        pessoa.setPrimeiroNome(preferences.getString("primeiroNome","NA"));
+        pessoa.setSobreNome(preferences.getString("sobrenome","NA"));
+        pessoa.setCursoDesejado(preferences.getString("cursoDesejado","NA"));
+        pessoa.setTelefoneContato(preferences.getString("telefoneContato","NA"));
 
      /*   dadosPessoa = "Primeiro nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
