@@ -15,7 +15,7 @@ import devandroid.pires.applistacurso.controller.PessoaController;
 import devandroid.pires.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
-
+//
     SharedPreferences preferences;
     SharedPreferences.Editor listaVip;
     public static final String NOME_PREFERENCES = "pref_listaVip";
